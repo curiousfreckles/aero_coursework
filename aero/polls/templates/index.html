@@ -12,40 +12,45 @@
     <title>Homepage</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
-    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
   </head>
 
     <body style="background-color: #101010";>
-    <style>
+<style>
+  tr: hover { 
+    background-color: #ffffff !important;
+    color: #DAA520 !important; 
+  }
+  .btn-primary, .btn-secondary {
+        border-color: #DAA520;
+        background-color: #DAA520;
+  }
+  .btn-primary:hover, .btn-secondary:hover {
+    border-color: #DAA520;
+    background-color: #DAA520;
+    color: #ffffff !important;
+  }
+  .navText { color: #ffffff; }
+  .navText:hover { color: #ffffff; }
+      
+  button:active, button:hover, button:focus, input:focus, a:active, a:focus {
+    outline: none !important;
+  }
+  a:hover { color: #DAA520 !important; }
+  p, h1, h2, h3 { color: #ffffff !important; }
+  a { color: #ffffff !important; font-weight: 250; }
 
-      .btn-primary, .btn-secondary {
-        border-color: #ffd700;
-        background-color: #ffd700;
-      }
-      .btn-primary:hover, .btn-secondary:hover {
-        border-color: #ffd700;
-        background-color: #ffd700;
-        color: #ffd700 !important;
-      }
-      .navText { color: #F8F8F8; }
-      .navText:hover { color: #F8F8F8; }
-
-      button:active, button:hover, button:focus, input:focus, a:active, a:focus {
-        outline: none !important;
-      }
-      a:hover { color: #ffd700 !important; }
-      p, h1, h2, h3 { color: #ffffff !important; }
-      a { color: #ffffff !important; font-weight: 250; }
+  .container{
+    margin-top: 50px
+  }
       .navbar {
       background-color: #202020;
       overflow: hidden;
-      width: 97%;
+      width: 100%;
       }
 
       .navbar a {
@@ -59,33 +64,27 @@
       float: right;
       }
 
-      .jumbotron{
-        width: 97%;
-      }
+    .table, th, td {
+    border-bottom: 1px solid #ddd;
+    background-color: #707070;
+    width: 100%;
+    padding: 5px;
+    float: center;
+    }
 
-      .jumbotron h1 {
-        float: center;
-        color: #F8F8F8;
-      }
+    .carousel-inner{
+      width: 100%;
+      height: 500px;
+    }
+    .carousel-inner .item a img {
+    margin-left: 50%;
 
-      .column{ float: left; width: 31%;
-        padding: 10px;
-        height: 180px;
-      }
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-        position: absolute;
-        bottom: 30px;
-
-      }
-  
-    </style>
+}
+</style>
 
   <!--Top navigation bar-->
   <div class="navbar">
-      <a class="navbar-brand" href="#"><span><img src="{% static "images/departures.png" %}"></span>Papertown airport</a>
+      <a class="navbar-brand"><i><b></span>Papertown airport</b></i></a>
     <div class="login-container">
       <form action="adminpanel" method="post" class="">
               {% csrf_token %}
@@ -96,41 +95,65 @@
     </div>
 </div>
 
-    <main role="main">
+<div id="demo" class="carousel slide" data-ride="carousel">
 
-      <!-- Main message banner -->
-      <div class="jumbotron">
-        <div class="container" style="height: 300px;">
-          <br><br>
-          <h1 class="display-3">Welcome to Papertown!</h1>
-          <p>This is the official page of the Saint-Papier city airport.<br></p>
-          <br><br>
-        </div>
-      </div>
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.maticatech.com/assets/files/airport-775539_1920-1200x500.jpg" style="margin-left: 8%">
+      <div class="carousel-caption d-none d-md-block">
+      <h5><i>Welcome to Papertown</i></h5>
+      <p>Check out the links below for more information</p>
+  </div>
+    </div>
+    <div class="carousel-item">
+      <img src="http://ipif.com.au/wp-content/uploads/2014/03/TMDESIGN_AirTrafficTower_142597264.jpg" style="margin-left: 8%">
+      <div class="carousel-caption d-none d-md-block">
+      <h5><i>Welcome to Papertown</i></h5>
+      <p>Check out the links below for more information</p>
+    </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
 
       <div class="container">
         <!-- Example row of columns -->
-        <div class="row" style="height: 245px;">
+        <div class="row" style="height: 195px;">
           <div class="col-md-4" >
             <h2><i>Departures -></i></h2>
-            <p>Check out all the departures from Pulkovo Airport for today</p>
+            <p>Check out the departure schedule for today</p>
             <p> <i>All the information about delays, gates and destinations.</i> </p>
             <p> <a class="btn btn-secondary" href="departures.html" role="button">View details</a> </p>
           </div>
 
           <div class="col-md-4">
             <h2><i>Arrivals -></i></h2>
-            <p >Check out all the arrivals from Pulkovo Airport for today</p>
+            <p >Check out the arrivals schedule for today</p>
             <p ><i>Check out all the details about late arrivals, delays and flight number</i></p>
             <p><a class="btn btn-secondary" href="arrivals.html" role="button">View details</a></p>
           </div>
 
           <div class="col-md-4">
-            <h2><i>Contact us -> </h2>
+            <h2><i>Contact us -> </i></h2>
             <p >We would gladly hear back from you!</p>
 
             <p><i>Click the link to send us an <a href="mailto:kristina.ushakova@outlook.com">email.</a></a></p>
-              <br><br>
+              <br>
 
             <p><a class="btn btn-secondary" href="https://pulkovoairport.ru/transport/bus/" target="_blank" role="button">View details</a></p>
           </div>
