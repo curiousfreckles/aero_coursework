@@ -1,0 +1,121 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html>
+<head>
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+</head>
+ <body style="background-color: #ffd700;">
+  <style>
+      .btn-primary, .btn-secondary {
+        border-color: #ffd700;
+        background-color: #ffd700;
+      }
+      .btn-primary:hover, .btn-secondary:hover {
+        border-color: #ffffff;
+        background-color: #ffffff;
+        color: #ffd700 !important;
+      }
+      .navText { color: #ffffff; }
+      .navText:hover { color: #ffd700; }
+
+      button:active, button:hover, button:focus, input:focus, a:active, a:focus {
+        outline: none !important;
+      }
+      a:hover { color: #ffd700 !important; }
+      p, h1, h2, h3 { color: #ffffff !important; }
+      
+      a { color: #ffffff !important; font-weight: 250; }
+
+    </style>
+   <br><br>
+
+
+  <div class="container">
+   <div class="panel panel-default">
+     <div class="panel-heading">
+       <a class="nav-link" href="/">Home</a>
+    <h1>Admin</h1>
+    <hr><br><br>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <h1 align="left">Add arrival</h1><hr>
+              <form action="addarrival" method="post">
+                  {% csrf_token %}
+                  <label for="flight_number" style="color: #ffffff !important;">Flight number:</label>
+                  <input class="form-control mb-3" id="flight_number" type="text" name="flight_number">
+                  <label for="time" style="color: #ffffff !important;">Time:</label>
+                  <input class="form-control mb-3" id="time" type="text" name="time">
+                  <label for="origin" style="color: #ffffff !important;">Origin:</label>
+                  <input class="form-control mb-3" id="origin" type="text" name="origin">
+                  <label for="aircraft" style="color: #ffffff !important;">Aircraft:</label>
+                  <input class="form-control mb-3" id="aircraft" type="text" name="aircraft">
+                  <label for="status" style="color: #ffffff !important;">Status:</label>
+                  <input class="form-control mb-3" id="status" type="text" name="status">
+                  <input type="submit" class="btn btn-primary">
+              </form>
+            </div>
+
+            <div class="col-sm-6">
+              <h1 align="left">Delete arrival</h1><hr>
+                <form action="deletearrival" method="post">
+                    {% csrf_token %}
+                    <label style="color: #ffffff !important;">Pick an arrival number:</label>
+                    <select class="form-control" name="flight_number">
+                      <option><a>Please pick the flight number from the list</a></option>
+                      {% for a in a %}
+
+                      <option>{{ a.flight_number }}</option>
+                      {%endfor%}
+                    </select>
+                    <br>
+                    <input type="submit" class="btn btn-primary">
+              </form>
+            </div>
+
+        </div>
+        <br><br>
+        <div class="row">
+
+          <div class="col-sm-6">
+              <h1 align="left">Add departure</h1><hr>
+                <form action="adddeparture" method="post">
+                    {% csrf_token %}
+                    <label for="flight_number" style="color: #ffffff !important;">Flight number:</label>
+                    <input class="form-control mb-3" id="flight_number" type="text" name="flight_number">
+                    <label for="time" style="color: #ffffff !important;">Time:</label>
+                    <input class="form-control mb-3" id="time" type="text" name="time">
+                    <label for="destination" style="color: #ffffff !important;">Destination:</label>
+                    <input class="form-control mb-3" id="destination" type="text" name="destination">
+                    <label for="aircraft" style="color: #ffffff !important;">Aircraft:</label>
+                    <input class="form-control mb-3" id="aircraft" type="text" name="aircraft">
+                    <label for="status" style="color: #ffffff !important;">Status:</label>
+                    <input class="form-control mb-3" id="status" type="text" name="status">
+                    <input type="submit" class="btn btn-primary">
+                </form>
+              </div>
+
+                <div class="col-sm-6">
+                  <h1 align="left">Delete departure</h1><hr>
+                    <form action="deletedeparture" method="post">
+                        {% csrf_token %}
+                        <label style="color: #ffffff !important;">Pick a departure number:</label>
+                        <select class="form-control" name="flight_number">
+                          {% for b in b %}
+                          <option>{{ b.flight_number }}</option>
+                          {%endfor%}
+                        </select>
+                        <br>
+                        <input type="submit" class="btn btn-primary">
+                  </form>
+                </div>
+
+            </div>
+
+   </div>
+  </div>
+ </body>
+</html>

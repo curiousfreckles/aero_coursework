@@ -1,0 +1,135 @@
+[
+  {
+    "time": "9:35 AM",
+    "flight_number": "N986QH",
+    "aircraft": "A319",
+    "status": "Departed",
+    "destination": "Moscow"
+  },
+  {
+    "time": "10:23 AM",
+    "flight_number": "N65NS",
+    "aircraft": "A320",
+    "status": "Delayed",
+    "destination": "Frankfurt"
+  },
+  {
+    "time": "10:45 AM",
+    "flight_number": "KV8412",
+    "aircraft": "A319",
+    "status": "Departed",
+    "destination": "Ufa"
+  },
+  {
+    "time": "11:18 AM",
+    "flight_number": "PN205",
+    "aircraft": "B77L",
+    "status": "Departed",
+    "destination": "Dubai"
+  },
+  {
+    "time": "11:52 AM",
+    "flight_number": "N1011K",
+    "aircraft": "A320",
+    "status": "Departed",
+    "destination": "Syktyvkar"
+  },
+  {
+    "time": "12:10 PM",
+    "flight_number": "QN6109",
+    "aircraft": "AT72",
+    "status": "Cancelled",
+    "destination": "Tallinn"
+  },
+  {
+    "time": "12:31 PM",
+    "flight_number": "YB332",
+    "aircraft": "AT72",
+    "status": "Cancelled",
+    "destination": "Prague"
+  },
+  {
+    "time": "13:00 PM",
+    "flight_number": "UN569",
+    "aircraft": "B73H",
+    "status": "Departed",
+    "destination": "Makhachkala"
+  },
+  {
+    "time": "14:12 PM",
+    "flight_number": "N155LZ",
+    "aircraft": "B73H",
+    "status": "Departed",
+    "destination": "Moscow"
+  },
+  {
+    "time": "14:41 PM",
+    "flight_number": "RE390",
+    "aircraft": "A319",
+    "status": "Delayed",
+    "destination": "Berlin"
+  },
+  {
+    "time": "15:10 PM",
+    "flight_number": "N1511",
+    "aircraft": "A319",
+    "status": "Cancelled",
+    "destination": "Sochi"
+  },
+  {
+    "time": "16:20 PM",
+    "flight_number": "N223KR",
+    "aircraft": "B73H",
+    "status": "Departed",
+    "destination": "Moscow"
+  },
+  {
+    "time": "16:50 PM",
+    "flight_number": "N767KU",
+    "aircraft": "CRJ2",
+    "status": "Departed",
+    "destination": "Kazan"
+  },
+  {
+    "time": "17:19 PM",
+    "flight_number": "MH191",
+    "aircraft": "AN26",
+    "status": "Departed",
+    "destination": "Kostroma"
+  },
+  {
+    "time": "18:00 PM",
+    "flight_number": "GV883",
+    "aircraft": "B73H",
+    "status": "Departed",
+    "destination": "Amsertdam"
+  },
+  {
+    "time": "18:26 PM",
+    "flight_number": "UF644",
+    "aircraft": "E190",
+    "status": "Due",
+    "destination": "Helsinki"
+  },
+  {
+    "time": "19:18 PM",
+    "flight_number": "GP808",
+    "aircraft": "A319",
+    "status": "Due",
+    "destination": "Moscow"
+  },
+  {
+    "time": "19:43 PM",
+    "flight_number": "AP897",
+    "aircraft": "E190",
+    "status": "Due",
+    "destination": "Tbilisi"
+  },
+  {
+    "time": "21:20 PM",
+    "flight_number": "ZF111",
+    "aircraft": "A319",
+    "status": "Due",
+    "destination": "Perm"
+  }
+]

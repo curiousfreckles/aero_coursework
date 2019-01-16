@@ -1,0 +1,124 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Arrivals</title>
+                                                                                                                                                                                                      
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    
+  </head>
+
+<body style="background-color: #ffd700";>
+
+<style>
+  tr:hover { 
+    background-color: #ffffff !important;
+    color: #ffd700 !important; 
+  }
+  .btn-primary, .btn-secondary {
+        border-color: #ffd700;
+        background-color: #ffd700;
+  }
+  .btn-primary:hover, .btn-secondary:hover {
+    border-color: #ffffff;
+    background-color: #ffffff;
+    color: #ffd700 !important;
+  }
+  .navText { color: #ffffff; }
+  .navText:hover { color: #ffd700; }
+      
+  button:active, button:hover, button:focus, input:focus, a:active, a:focus {
+    outline: none !important;
+  }
+  a:hover { color: #ffd700 !important; }
+  p, h1, h2, h3 { color: #ffffff !important; }
+  a { color: #ffffff !important; font-weight: 250; }
+</style>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      
+  <a class="navbar-brand" href="#"><img src="{% static 'images/departures.png' %}"></a>
+      
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+          
+      <li class="nav-item active">
+        <a class="nav-link" href="http://localhost:8000">Home<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link disabled" href="departures.html">Departures</a>
+      </li>
+      
+      <li class="nav-item active">
+            <a class="nav-link disabled" href="#" style="color: #ffd700 !important;">Arrivals<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link disabled" href="https://pulkovoairport.ru/transport/bus/">Route</a>
+      </li>
+    </ul>
+    
+    <p id="txt" style="color: #ffd700 !important; font-size: 22px; font-weight: 250;" class="text-right"></p>
+  </div>
+</nav>
+
+  <div id="myModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" data-dismiss="modal">x</button>
+          <h4 class="modal-title">Заголовок</h4>
+        </div>
+        <div class="modal-body">Некий салам алейкум</div>
+      </div>
+    </div>
+  </div>
+
+<div class="row">
+
+  <div class="col-lg-12">
+    <p>ok<br></p><br>
+    <table class="table table-hover table-dark" id="arrivals_table" width="300">
+
+    <tr>
+      <th scope="col">Time</th>
+      <th scope="col">Flight Number</th>
+      <th scope="col">Origin</th>
+      <th scope="col">Aircraft</th>
+      <th scope="col">Status</th>
+    </tr>
+	{% for i in a %}
+	<tr>
+      <td>{{i.time}}</td>
+      <td>{{i.flight_number}}</td>
+      <td>{{i.origin}}</td>
+	  <td>{{i.aircraft}}</td>
+	  <td>{{i.status}}</td>
+    </tr>
+	{%endfor%}
+  
+    </table>
+  </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'images/favicon.png' %}">
+
+    <title>Homepage</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+
+  </head>
+
+    <body style="background-color: #101010";>
+    <style>
+
+      .btn-primary, .btn-secondary {
+        border-color: #ffd700;
+        background-color: #ffd700;
+      }
+      .btn-primary:hover, .btn-secondary:hover {
+        border-color: #ffd700;
+        background-color: #ffd700;
+        color: #ffd700 !important;
+      }
+      .navText { color: #F8F8F8; }
+      .navText:hover { color: #F8F8F8; }
+
+      button:active, button:hover, button:focus, input:focus, a:active, a:focus {
+        outline: none !important;
+      }
+      a:hover { color: #ffd700 !important; }
+      p, h1, h2, h3 { color: #ffffff !important; }
+      a { color: #ffffff !important; font-weight: 250; }
+      .navbar {
+      background-color: #202020;
+      overflow: hidden;
+      width: 97%;
+      }
+
+      .navbar a {
+      float: left;
+      color: #F8F8F8;
+      font-size: 25px;
+      font-style: italic;
+      }
+
+      .navbar .login-container {
+      float: right;
+      }
+
+      .jumbotron{
+        width: 97%;
+      }
+
+      .jumbotron h1 {
+        float: center;
+        color: #F8F8F8;
+      }
+
+      .column{ float: left; width: 31%;
+        padding: 10px;
+        height: 180px;
+      }
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        position: absolute;
+        bottom: 30px;
+
+      }
+  
+    </style>
+
+  <!--Top navigation bar-->
+  <div class="navbar">
+      <a class="navbar-brand" href="#"><span><img src="{% static "images/departures.png" %}"></span>Papertown airport</a>
+    <div class="login-container">
+      <form action="adminpanel" method="post" class="">
+              {% csrf_token %}
+        <input type="text" class="form-control-static" name="username" placeholder="Type in your username...">
+        <input type="password" class="form-control-static" name="password" placeholder="and password">
+        <input type="submit" class="btn btn-primary">
+      </form>
+    </div>
+</div>
+
+    <main role="main">
+
+      <!-- Main message banner -->
+      <div class="jumbotron">
+        <div class="container" style="height: 300px;">
+          <br><br>
+          <h1 class="display-3">Welcome to Papertown!</h1>
+          <p>This is the official page of the Saint-Papier city airport.<br></p>
+          <br><br>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row" style="height: 245px;">
+          <div class="col-md-4" >
+            <h2><i>Departures -></i></h2>
+            <p>Check out all the departures from Pulkovo Airport for today</p>
+            <p> <i>All the information about delays, gates and destinations.</i> </p>
+            <p> <a class="btn btn-secondary" href="departures.html" role="button">View details</a> </p>
+          </div>
+
+          <div class="col-md-4">
+            <h2><i>Arrivals -></i></h2>
+            <p >Check out all the arrivals from Pulkovo Airport for today</p>
+            <p ><i>Check out all the details about late arrivals, delays and flight number</i></p>
+            <p><a class="btn btn-secondary" href="arrivals.html" role="button">View details</a></p>
+          </div>
+
+          <div class="col-md-4">
+            <h2><i>Contact us -> </h2>
+            <p >We would gladly hear back from you!</p>
+
+            <p><i>Click the link to send us an <a href="mailto:kristina.ushakova@outlook.com">email.</a></a></p>
+              <br><br>
+
+            <p><a class="btn btn-secondary" href="https://pulkovoairport.ru/transport/bus/" target="_blank" role="button">View details</a></p>
+          </div>
+        </div>
+
+        <hr style="background-color: #ffffff">
+
+      </div>
+
+    </main>
+
+  </body>
+</html>
